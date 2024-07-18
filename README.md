@@ -11,7 +11,7 @@
 5. Activate your virtual environment using the command in the terminal
 > <virtual_environment_name>\Scripts\activate
 5. Install the following dependencies by running the command in terminal
-> pip install pytest, selenium
+> pip install pytest
 6. Go to the project root directory
 7. Install the setup.py file with the command
 > pip install -e .
@@ -30,7 +30,7 @@
 5. Activate your virtual environment using the command in the terminal
 > <virtual_environment_name>\Scripts\activate
 5. Install the following dependencies by running the command in terminal
-> pip install pytest, selenium
+> pip install pytest
 6. Go to the project root directory
 7. Install the setup.py file with the command
 > pip install -e .
