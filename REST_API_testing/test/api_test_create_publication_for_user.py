@@ -58,3 +58,4 @@ def test_publication_data_for_requests_get_publication_after_user_delete(
     assert get_user_publication.json() == []
 
 
+
