@@ -89,6 +89,7 @@ def test_publication_data_for_requests_get_publication_after_user_delete(
     5. Get publication for this user by user ID which was deleted
     Check data of publication for requests get publication after user delete
     """
+    assert user_id is not None            
     requests.post(f'{main_url}/{user_id}/posts', headers=headers, json=publication_data)
     requests.delete(f'{main_url}/{user_id}', headers=headers)
     get_user_publication = requests.get(f'{main_url}/{user_id}/posts', headers=headers)
