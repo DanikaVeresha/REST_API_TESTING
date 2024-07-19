@@ -1,3 +1,7 @@
+"""
+This file is used to install the package and its dependencies.
+"""
+
 from setuptools import setup
 
 

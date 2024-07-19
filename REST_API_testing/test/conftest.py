@@ -1,8 +1,12 @@
+"""
+This file contains the fixtures that are used in the test cases.
+"""
+
 import pytest
 import requests
 
 
-@pytest.fixture()
+@pytest.fixture(scope='session')
 def main_url():
     return 'https://gorest.co.in/public/v2/users/'
 
@@ -36,16 +40,16 @@ def publication_data():
 
 @pytest.fixture()
 def user(main_url, headers, user_data):
-    create_user = requests.post(main_url, headers=headers, json=user_data)
+    requests.post(main_url, headers=headers, json=user_data)
     get_user = requests.get(main_url, headers=headers)
     get_user_id = get_user.json()[0]['id']
     yield get_user_id
-    delete_user = requests.delete(f'{main_url}/{get_user_id}', headers=headers)
+    requests.delete(f'{main_url}/{get_user_id}', headers=headers)
 
 
 @pytest.fixture()
-def user_deleted(main_url, headers, user_data):
-    create_user = requests.post(main_url, headers=headers, json=user_data)
+def user_id(main_url, headers, user_data):
+    requests.post(main_url, headers=headers, json=user_data)
     get_user = requests.get(main_url, headers=headers)
     get_user_id = get_user.json()[0]['id']
     yield get_user_id
