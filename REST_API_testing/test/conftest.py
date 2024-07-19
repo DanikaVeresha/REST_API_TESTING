@@ -52,7 +52,13 @@ def user_id(main_url, headers, user_data):
     requests.post(main_url, headers=headers, json=user_data)
     get_user = requests.get(main_url, headers=headers)
     get_user_id = get_user.json()[0]['id']
-    yield get_user_id
+    return get_user_id
+
+
+
+
+
+
 
 
 
